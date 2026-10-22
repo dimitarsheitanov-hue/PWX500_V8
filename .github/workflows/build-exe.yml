@@ -1,0 +1,40 @@
+name: Build CAM Agent V5.1.38 EXE
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'build/**'
+      - '.github/workflows/build-exe.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Compile Windows x64 EXE
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile CAM Agent with Windows PowerShell 5.1
+        shell: powershell
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+          .\build\Build-CAM-Agent.ps1
+
+      - name: Upload compiled package
+        uses: actions/upload-artifact@v4
+        with:
+          name: CAM_Agent_V5_1_38_EXE_PACKAGE
+          path: |
+            dist\CAM_Agent_V5_1_38.exe
+            dist\CAM_Agent_V5_1_38_COMPILED_PACKAGE.zip
+            dist\BUILD_INFO.txt
+          if-no-files-found: error
+          retention-days: 30
