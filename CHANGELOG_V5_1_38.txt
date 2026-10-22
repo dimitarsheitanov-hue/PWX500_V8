@@ -1,0 +1,13 @@
+CAM Agent V5.1.38 - TWO MODES + MANUAL COMMON MIXX/POWERSET
+
+- Automatic schedule modes: PGMX_ONLY (default) / FULL 1->5. Persisted next to LastRunDate.
+- Main screen: separate Prepare+PGMX, Complete 1->5, Common MIXX+PowerSet+XLS.
+- PGMX_ONLY: daily copy + persistent per-day manifest, stops safely before Maestro.
+- Common stage 2: takes pending PGMX from previous days, stages copies in one dedicated batch directory, creates ONE MIXX and ONE PowerSet XLS.
+- Duplicate ProgramCodeF with different bytes => STOP with explanation before Maestro.
+- Successful batch: moves problem/no-time originals into matching daily folders and marks them globally excluded from automatic retesting.
+- Existing 5.44s median fallback and time import logic unchanged.
+- V5.1.35 isolated files imported into exclusion ledger by names at startup.
+- PGMX allowed-folder worker uses same version-4 snapshot of default+custom roots as Main.
+- No changes to converter, machine programs, core HOP, search, CSV workers or times DB import.
+- Automated GitHub build tests for schedule modes, batch safety/collisions and folder whitelist.

@@ -1,0 +1,29 @@
+{
+  "baseline": "V5.1.38 BUILD FIX5",
+  "main_functions_before": 252,
+  "main_functions_after": 253,
+  "main_changed_functions": [
+    "Get-MixFileBrowserSnapshot",
+    "Find-MixBatchCenterFolderItem",
+    "Wait-PowerSetOptimizationComplete"
+  ],
+  "main_new_functions": [
+    "Get-PowerSetOptimizationUiSnapshot"
+  ],
+  "source_files_changed": [
+    "CAM_Agent_BatchEngine_V5_1_38.ps1",
+    "PWX500_Agent_V3.ps1"
+  ],
+  "source_files_unchanged": 17,
+  "verified_unchanged_workflows": [
+    "daily selection",
+    "MIXX creation",
+    "Save as",
+    "PGMX file selection",
+    "PowerSet run",
+    "PowerSet XLS cleanup",
+    "root aliases"
+  ],
+  "windows_runtime_validation": "not executable here; must test in Maestro on Windows",
+  "checks": "PASS"
+}

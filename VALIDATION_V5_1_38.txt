@@ -1,0 +1,17 @@
+CAM Agent V5.1.38 - PACKAGE VALIDATION (not a Windows/Maestro runtime test)
+Baseline: CAM_Agent_V5_1_37_GITHUB_COMPILE_PACKAGE_FIX2.zip
+Existing runtime files byte-for-byte unchanged: 17
+Changed existing runtime file: PWX500_Agent_V3.ps1
+Added runtime module: CAM_Agent_BatchEngine_V5_1_38.ps1
+Compiled main references the added module via stable AppRoot.
+Runtime workers, converter and time database files are unchanged.
+GitHub Windows PowerShell 5.1 parser, schedule and batch regression tests,
+allowed-folder snapshot and core hashes run BEFORE EXE compilation.
+Important: Real Maestro UI, PowerSet XLS output, network drive mapping and
+actual Windows EXE operation have NOT been executed in this Linux environment.
+For first use run separate safe trial on copied daily files; keep V5.1.37 backup.
+
+BUILD FIX1: no production source or existing runtime dependency changes.
+Baseline worker/converter files all compared equal to V5.1.37 FIX2.
+Fixed false-positive integrity check for Windows LF/CRLF conversion.
+Binary dependencies remain exact-hash-checked.

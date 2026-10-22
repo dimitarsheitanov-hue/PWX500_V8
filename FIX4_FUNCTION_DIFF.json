@@ -1,0 +1,17 @@
+{
+  "version": "V5.1.38_BUILD_FIX4",
+  "changedExisting": [
+    "Select-MixDailyFolderInDialog"
+  ],
+  "added": [
+    "Get-MixBatchBrowserSteps",
+    "Get-MixFileBrowserSnapshot",
+    "Get-MixBatchBrowserSnapshot",
+    "Get-MixBrowserObservedPath",
+    "Find-MixBatchCenterFolderItem",
+    "Open-MixBatchFolderInDialog"
+  ],
+  "oldFunctions": 245,
+  "newFunctions": 251,
+  "retainedByteEqual": 244
+}

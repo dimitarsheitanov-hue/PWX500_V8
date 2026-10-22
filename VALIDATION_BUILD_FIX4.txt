@@ -1,0 +1,25 @@
+﻿CAM Agent V5.1.38 BUILD FIX4 validation summary
+
+Issue grounded in Maestro Add programs screenshot:
+  Maestro remains in Desktop > FOUND; stage 2 expects
+  FOUND\Общи_пакети\22.10-22.10_20261022_121647.
+  Old generic browser tries to find deeper folders only as tree children.
+  Maestro's virtualized WPF tree may not expose them, while the center list does.
+
+Changes relative to BUILD FIX3:
+  1 existing function modified: Select-MixDailyFolderInDialog.
+  6 new helper functions: Get-MixBatchBrowserSteps, Get-MixFileBrowserSnapshot, Get-MixBatchBrowserSnapshot, Get-MixBrowserObservedPath, Find-MixBatchCenterFolderItem, Open-MixBatchFolderInDialog.
+  Batch-only route. Legacy day-folder path untouched.
+  Add programs, PowerSet Choose the file, Save as share folder navigation.
+  Each center-folder double click requires fresh observed breadcrumb confirmation.
+  Check active modal scope; no Confirm is clicked by this navigation.
+  Disabled Confirm in Add programs is recognized as geometry, not excluded.
+  On ambiguous/failed navigation: stop safely, leave PGMX and checkpoint intact.
+
+Regression:
+  9 existing navigation, Mix, PowerSet function SHA256 are pinned in
+  build/Test-MixBatchNavigation.ps1; all match the prior package.
+  src modules apart from PWX500_Agent_V3.ps1 are byte-for-byte unchanged.
+  Windows PowerShell 5.1 parser and path/state regression tests run in GitHub.
+  A real Maestro UI integration test is NOT possible in this Linux environment.
+  This package is a test build and should be tried on a controlled batch.

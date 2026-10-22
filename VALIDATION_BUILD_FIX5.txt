@@ -1,0 +1,23 @@
+V5.1.38 BUILD FIX5 - validation summary
+
+BASE: V5.1.38 BUILD FIX4 source
+CHANGED SOURCE FILES: PWX500_Agent_V3.ps1, PWX500_PgmxWorker_V3.ps1,
+PWX500_HistoryWorker_V3.ps1 (authorization checks only, and PGMX root depth check)
+UNCHANGED SOURCE FILES: 16
+
+Checks performed locally:
+- Diff checked to keep changes in root-authorization helpers only
+- Other source/runtime files byte-for-byte unchanged
+- Core hash pins updated for modified workers
+- CRLF/LF and UTF-8 BOM preserved
+- Canonical Y/V/Z authorization surrogate checks (approved/blocked cases)
+- No physical scan-root multiplication
+- ZIP checksums and manifest checked
+
+On GitHub Windows PowerShell 5.1 before compiling:
+- Test-RootDriveAliases.ps1 tests MAIN/PGMX/HISTORY alias authorization
+- It also tests PGMX family depth equality under Y/V/Z
+- All prior FIX4 tests continue running
+
+Cannot execute real Windows UI / Maestro / PowerSet in this Linux environment.
+First Windows test must verify the mapped drives exist and are accessible.
